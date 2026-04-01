@@ -288,7 +288,5 @@ def _patch_signature(
     params: list[inspect.Parameter],
 ) -> None:
     """Replace function signature so FastAPI can introspect dependencies correctly."""
-    sorted_params = sorted(
-        params, key=lambda p: p.default is not inspect.Parameter.empty
-    )
+    sorted_params = sorted(params, key=lambda p: p.kind)
     cast(Any, fn).__signature__ = inspect.Signature(sorted_params)
