@@ -19,3 +19,6 @@ test:
 
 build_project:
 	uv run hatch build
+
+publish_pip:
+	uv run hatch publish
