@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-class-router"
-version = "0.0.2"
+version = "0.1.1"
 description = "FastApi_Class_Router is a lightweight yet powerful library for implementing class-based routing in FastAPI. It allows you to organise your API’s logic into classes, which significantly improves code structure, promotes component reusability and facilitates the implementation of dependency injection."
 readme = "README.md"
 authors = [
