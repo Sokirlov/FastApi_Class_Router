@@ -19,8 +19,8 @@ from typing import Any, cast
 
 from fastapi import Depends, FastAPI
 from fastapi.testclient import TestClient
-from fastapi_class_router import ClassRouter, get, post
 
+from fastapi_class_router import ClassRouter, get, post
 from tests.conftest import ItemCreate, make_client
 
 # ─────────────────────────────────────────────────────────────────────────────

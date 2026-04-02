@@ -6,8 +6,9 @@ Run with: uvicorn example:app --reload
 from typing import Any
 
 from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi_class_router import ClassRouter, delete, get, patch, post, put
 from pydantic import BaseModel
+
+from fastapi_class_router import ClassRouter, delete, get, patch, post, put
 
 # ── Schemas ───────────────────────────────────────────────────────────────────
 
