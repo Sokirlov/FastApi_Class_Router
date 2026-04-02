@@ -1,8 +1,8 @@
 from typing import Any
 
 from fastapi import Depends
-from fastapi_class_router import ClassRouter, get
 
+from fastapi_class_router import ClassRouter, get
 from tests.unit.conftest import make_client
 
 # ─────────────────────────────────────────────────────────────────────────────
