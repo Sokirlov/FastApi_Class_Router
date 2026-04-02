@@ -6,9 +6,27 @@ readme = "README.md"
 authors = [
     { name = "sokirlov", email = "soxwhite@gmail.com" }
 ]
+license = { text = "MIT" }
+keywords = ["fastapi", "router", "cbv", "class-based-views", "controller"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: FastAPI",
+    "Typing :: Typed",
+]
+[project.urls]
+Homepage      = "https://github.com/Sokirlov/FastApi_Class_Router/"
+Repository    = "https://github.com/Sokirlov/FastApi_Class_Router/"
+"Bug Tracker" = "https://github.com/Sokirlov/FastApi_Class_Router/issues"
+
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi>=0.120.4",
+    "fastapi>=0.100.0",
 ]
 
 [build-system]
