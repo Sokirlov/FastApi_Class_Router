@@ -21,7 +21,7 @@ from fastapi import Depends, FastAPI
 from fastapi.testclient import TestClient
 
 from fastapi_class_router import ClassRouter, get, post
-from tests.conftest import ItemCreate, make_client
+from tests.unit.conftest import ItemCreate, make_client
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Router configuration (prefix, tags, responses)

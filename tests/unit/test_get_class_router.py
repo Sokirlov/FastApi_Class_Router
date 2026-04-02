@@ -1,6 +1,6 @@
 from starlette.testclient import TestClient
 
-from tests.conftest import _STORE
+from tests.unit.conftest import _STORE
 
 # ─────────────────────────────────────────────────────────────────────────────
 # GET

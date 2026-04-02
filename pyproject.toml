@@ -6,9 +6,23 @@ readme = "README.md"
 authors = [
     { name = "sokirlov", email = "soxwhite@gmail.com" }
 ]
+license = { text = "MIT" }
+keywords = ["fastapi", "router", "cbv", "class-based-views", "controller"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: FastAPI",
+    "Typing :: Typed",
+]
+
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi>=0.120.4",
+    "fastapi>=0.100.0"
 ]
 
 [build-system]
@@ -23,7 +37,13 @@ dev = [
     "ruff>=0.15.8",
     "httpx>=0.28.1",
     "pytest>=9.0.2",
+    "uvicorn>=0.42.0",
 ]
+
+[project.urls]
+Homepage      = "https://github.com/Sokirlov/FastApi_Class_Router/"
+Repository    = "https://github.com/Sokirlov/FastApi_Class_Router/"
+"Bug Tracker" = "https://github.com/Sokirlov/FastApi_Class_Router/issues"
 
 
 [tool.hatch.build.targets.wheel]
@@ -32,6 +52,9 @@ packages = ["src/fastapi_class_router"] # The py.typed file must be inside this 
 [tool.ruff]
 line-length = 88
 target-version = "py310"
+exclude = [
+    "exemples",
+]
 
 [tool.ruff.format]
 quote-style = "double" # Use double quotes (Python standard)
@@ -57,6 +80,7 @@ extend-immutable-calls = [
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S101"]  # Enabling assert in tests
 
+
 [tool.mypy]
 python_version = "3.10"
 strict = true
@@ -64,6 +88,8 @@ mypy_path = "src"
 ignore_missing_imports = true # This is critical for your py.typed
 explicit_package_bases = true
 namespace_packages = true
+exclude = ["exemples",]
+
 
 [[tool.mypy.overrides]]
 module = "tests.*"
