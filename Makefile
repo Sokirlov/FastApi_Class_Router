@@ -14,7 +14,7 @@ fix_imports:
 	uv run ruff check . --fix
 
 test:
-	uv run pytest tests -s -v
+	uv run pytest tests -s -v -x
 
 
 build_project:

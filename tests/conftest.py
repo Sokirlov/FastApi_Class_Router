@@ -11,18 +11,6 @@ from fastapi_class_router import ClassRouter, delete, get, patch, post, put
 from pydantic import BaseModel
 from starlette.testclient import TestClient
 
-
-@pytest.fixture
-def app() -> FastAPI:
-    return FastAPI()
-
-
-@pytest.fixture
-def client(app: FastAPI) -> Generator[TestClient, None, None]:
-    with TestClient(app) as c:
-        yield c
-
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Helpers / shared fixtures
 # ─────────────────────────────────────────────────────────────────────────────
@@ -133,5 +121,5 @@ def fresh_store() -> Generator[None, None, None]:
 
 
 @pytest.fixture
-def item_client() -> TestClient:
+def client() -> TestClient:
     return make_client(ItemController)
