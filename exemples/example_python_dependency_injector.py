@@ -1,14 +1,15 @@
 """
-example.py — Full usage example for fastapi-class-router.
-Run with: uvicorn example:app --reload
+Full usage example for fastapi-class-router.
+with FastApi and Python dependency injector
+https://python-dependency-injector.ets-labs.org/
 """
 
 from typing import Any
 
+import uvicorn
 from fastapi import Depends, FastAPI, HTTPException, status
-from pydantic import BaseModel
-
 from fastapi_class_router import ClassRouter, delete, get, patch, post, put
+from pydantic import BaseModel
 
 # ── Schemas ───────────────────────────────────────────────────────────────────
 
@@ -57,11 +58,13 @@ class UserController(ClassRouter, prefix="/users", tags=["Users"]):
     no manual Depends() wiring needed anywhere else.
     """
 
+    @inject
     def __init__(
         self,
-        db: dict[int, dict[str, int | str]] = Depends(get_db),
-        current_user: dict[str, Any] = Depends(get_current_user),
+        db: dict[str, int | str] = Depends(Provide[Container.get_db]),
+        current_user: dict[str, Any] = Depends(Provide[Container.get_current_user]),
     ):
+        """always must"""
         self.db = db
         self.current_user = current_user
 
@@ -125,3 +128,6 @@ app.include_router(UserController.as_router())
 # v1 = APIRouter(prefix="/api/v1")
 # UserController.attach_to(v1)
 # app.include_router(v1)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

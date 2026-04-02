@@ -1,5 +1,7 @@
 # Makefile
 
+run:
+	uv run uvicorn example:app --workers 1 --reload --use-colors --log-level debug --host 0.0.0.0 --port 8088
 
 pre-commit:
 	uv run pre-commit run --all-files

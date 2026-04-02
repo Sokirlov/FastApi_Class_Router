@@ -7,10 +7,9 @@ from typing import Any
 
 import pytest
 from fastapi import Depends, FastAPI
+from fastapi_class_router import ClassRouter, delete, get, patch, post, put
 from pydantic import BaseModel
 from starlette.testclient import TestClient
-
-from fastapi_class_router import ClassRouter, delete, get, patch, post, put
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Helpers / shared fixtures
